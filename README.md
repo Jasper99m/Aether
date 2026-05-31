@@ -1,7 +1,7 @@
 # Aether
 A lightweight user friendly electromagnetic simulation environment
 
-Simulate electromagnets, electrostatic charges, magnetically permiable and electrically charged meshes,
+Simulate electromagnets, electrostatic charges, magnetically permeable and electrically charged meshes,
 charged particle beams and more.
 
 Electromagnetic fields are stored in user defined volume domains and the fields can be viewed as vectors or traces in 2D or 3D.
