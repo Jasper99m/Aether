@@ -71,12 +71,12 @@ A mesh must first be created in the mesh editor screen, then selected in the Bou
 How it works:
 Both electric and magnetic effects are simulated using a boundary element method in the same iterative loop.
 Adaptive underrelaxation is used to speed up convergence and improve stability.
-Magnetostatic interactions are simulated using surface currents computed from the magnetic vector potential field,
+Magnetostatic interactions are simulated using surface currents computed to enforce boundary conditions across each element,
 then the effects from these currents are added to the field each iteration.
 
 Electrostatic effects are simulated by first getting initial conditions from an existing electric potential field,
 then iteratively updating the effects of all mesh boundary elements on all other boundary elements, while enforcing either
-fixed total charge, or fixed potential. Essentially a discretized version of the Green's function solution to Laplace's equation.
+fixed total charge, or fixed potential. Essentially a discretized Green's function solution to Laplace's equation.
 
 
 **Particle Emitter**
