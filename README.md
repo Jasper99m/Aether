@@ -14,6 +14,7 @@ Electromagnetic fields are stored in user defined volume domains and the fields 
 <img width="1918" height="1022" alt="Aether0 1ElectricMesh" src="https://github.com/user-attachments/assets/89f4a3c5-9272-4180-a3ea-edc484a196d2" />
 <img width="1918" height="1020" alt="Aether0 1ElectricMesh2" src="https://github.com/user-attachments/assets/7cf765f7-e905-4f13-92d9-32dbfab21c89" />
 <img width="1918" height="1018" alt="Aether0 1ParticleBeam" src="https://github.com/user-attachments/assets/63347856-406c-4067-8db5-fdeba325b422" />
+<img width="1918" height="1021" alt="Aether0 1ParticleBeam2" src="https://github.com/user-attachments/assets/22749018-c35e-4086-bf7e-df56b8e70c9a" />
 
 # Simulator objects
 **Static EM Domain**
