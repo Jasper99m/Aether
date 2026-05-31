@@ -1,5 +1,5 @@
 # Aether
-A lightweight user frielndly electromagnetic simulation environment
+A lightweight user friendly electromagnetic simulation environment
 
 Simulate electromagnets, electrostatic charges, magnetically permiable and electrically charged meshes,
 charged particle beams and more.
