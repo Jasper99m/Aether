@@ -26,17 +26,17 @@ When the "generate fields" button is clicked, all selected field effector object
 are used to generate electric and magnetic fields. Single step objects are simulated first, then mesh objects are simulated simultaneously until all values converge. The graph in the object data tab will show electric field, electric surface, magnetic field and magnetic surface values. These values are the rate of change normalized for the underrelaxation factor and are used to track convergence.
 
 
-*Field Viewer*
+**Field Viewer**
 
 Generates traces to visualize electric and magnetic fields within a specified domain.  If scaled to zero on one axis, the traces will be projected on to the plane.
 
 
-*Probe*
+**Probe**
 
 Displays magnetic and electric field information at one specific point.
 
 
-*Solenoid*
+**Solenoid**
 
 A coil of current carrying wire.
 
@@ -45,12 +45,12 @@ A wire is generated from the user defined parameters, and is used to generate a 
 The wire is assumed to have no thickness and uniform current. Self interaction is not simulated.
 
 
-*Multi Pole*
+**Multi Pole**
 
 Functions in the same way as the solenoid, but with several coils of wire arranged in a circle. The coils also have some additional geometry options such as axial vs radial winding direction and corner radius.
 
 
-*Static Plane*
+**Static Plane**
 
 A finite plane with uniform charge density.
 
@@ -58,12 +58,12 @@ How it works:
 The plane is discretized into segments with a defined size, then each segments total charge is used to generate an electric potential field. It is simulated in one step without self interaction and with a uniform charge distribution. If a more accurate model is needed, use a Boundary Mesh object with a voltage applied.
 
 
-*Static Tube*
+**Static Tube**
 
 Functions in the same way as the Static Plane but in a hollow cylindrical shape.
 
 
-*Boundary Mesh*
+**Boundary Mesh**
 
 A mesh consisting of triangular boundary elements used to simulate the electrostatic and magnetostatic effects of a conductor.
 A mesh must first be created in the mesh editor screen, then selected in the Boundary Mesh's properties menu. Simulation accuracy will depend on the mesh density. Higher density will result in better accuracy, but will take longer to simulate.
@@ -79,7 +79,7 @@ then iteratively updating the effects of all mesh boundary elements on all other
 fixed total charge, or fixed potential. Essentially a discretized version of the Green's function solution to Laplace's equation.
 
 
-*Particle Emitter*
+**Particle Emitter**
 
 A Particle source that emits charged particle rays which are effected by EMFieldDomain objects.
 
