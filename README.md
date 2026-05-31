@@ -98,8 +98,6 @@ Initial energy - The median initial kinetic energy of the rays in electron volts
 
 Position distribution mode - The distribution method used to assign ray initial positions. If set to Gaussian, a reduction in particle density of one standard deviation will be half way between the center and the edge of the emission disc.
 
-Momentum distribution mode - The distribution method used to assign ray initial momentum vectors.
-
 Angular distribution - How much the rays initial momentum vectors will differ from the emitters orientation. If Momentum distribution mode is uniform, this defines the maximum angle rays will be emitted at. If Gaussian, this defines one standard deviation in angle, and if Lambertian, this defines a cutoff angle.
 
 Energy distribution mode - The distribution method used to assign initial rays kinetic energy.
@@ -113,11 +111,10 @@ Max step dist - Defines the maximum distance a ray can travel in one step when u
 
 Steps per turn - Defines the minimum number of time steps per 360 degrees of curvature in the rays trajectory when using adaptive step time.
 
-Trajectory count - The maximum number of ray trajectories to record. These are just used to visualize them as curves in 3d space. More rays can be simulated and will still interact with detectors.
-
-Trajectory resolution - The minimum distance between two points on a recorded ray trajectory. This does not effect simulation resolution or time steps, just the resolution of the rendered trajectory curves.
-
-
 How it works:
-Relativistic Hamiltonian Ray Tracing.
-Each ray contains a position, momentum and velocity vector as well as a 6x6 position/momentum Jacobian matrix. Each time step, the rays position, momentum and velocity vectors are incremented using a relativistic Vay pusher method, and its phase is incremented. Its Jacobian matrix is then updated using a similar half E, B then half E method, and a Hamiltonian matrix generated from the derivatives of the B and E fields in the Field domain objects. The determinant of the spatial component of the Jacobian is used to calculate the amplitude, and is used to detect caustics (crossover) to adjust the phase and Maslov index accordingly.
+
+Each ray contains position and momentum vectors as well as a 6x6 position/momentum Jacobian matrix. The reference trajectory is advanced using a relativistic Vay pusher, while the phase-space Jacobian is evolved from the linearized Hamiltonian equations using local field derivatives in a similar symplectic half E, B then half E method. The determinant of the position-position block of the Jacobian is used to estimate geometric spreading in order to calculate the amplitude and to detect caustics, adjusting the phase and Maslov index accordingly.
+When a ray passes through a detector plane, a projected 2D spatial matrix, phase, amplitude and momentum are interpolated to the point of contact with the plane and recorded. Later, these values can be used to generate either a point or a gaussian like envelope used to bin detection data to pixels. if the beam is coherent, complex amplitude phase can be summed to generate interference patterns. 
+
+Note: particle ray tracing is in early development and has not been t
+thoroughly tested.
