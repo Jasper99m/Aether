@@ -1,7 +1,5 @@
 # Aether
-A lightweight user friendly electromagnetic simulation environment
-
-Simulate electromagnets, electrostatic charges, magnetically permeable and electrically charged meshes,
+A lightweight user friendly electromagnetic simulation environment.  Simulate magnetic and electric fields, magnetically permeable and electrically charged meshes,
 charged particle beams and more.
 
 Electromagnetic fields are stored in user defined volume domains and the fields can be viewed as vectors or traces in 2D or 3D.
@@ -89,18 +87,18 @@ fixed total charge, or fixed potential. Essentially a discretized Green's functi
 
 **Particle Emitter**
 
-A Particle source that emits charged particle rays which are effected by EMFieldDomain objects.
+A Particle source that emits charged particle rays that are effected by EMFieldDomain objects.
 
 Emission pattern settings:
-Disc diameter - The diameter of the disc that particles are emitted from.
+Emitter diameter - The diameter of the disc that particles are emitted from.
 
 Initial energy - The median initial kinetic energy of the rays in electron volts.
 
 Position distribution mode - The distribution method used to assign ray initial positions. If set to Gaussian, a reduction in particle density of one standard deviation will be half way between the center and the edge of the emission disc.
 
-Angular distribution - How much the rays initial momentum vectors will differ from the emitters orientation. If Momentum distribution mode is uniform, this defines the maximum angle rays will be emitted at. If Gaussian, this defines one standard deviation in angle, and if Lambertian, this defines a cutoff angle.
+Angular distribution - How much the rays initial momentum vectors will differ from the emitters orientation. If angular distribution mode is uniform, this defines the maximum angle rays will be emitted at. If Gaussian, this defines one standard deviation in angle, and if Lambertian, this defines a cutoff angle.
 
-Energy distribution mode - The distribution method used to assign initial rays kinetic energy.
+Energy distribution mode - The distribution method used to assign rays initial kinetic energy.
 
 Energy distribution - The amount of variation in initial kinetic energy in either the positive or negative direction (total spread is this x 2). If the distribution mode is set to Gaussian, this defines one standard deviation. If uniform, this defines the maximum deviation.
 
@@ -114,7 +112,7 @@ Steps per turn - Defines the minimum number of time steps per 360 degrees of cur
 How it works:
 
 Each ray contains position and momentum vectors as well as a 6x6 position/momentum Jacobian matrix. The reference trajectory is advanced using a relativistic Vay pusher, while the phase-space Jacobian is evolved from the linearized Hamiltonian equations using local field derivatives in a similar symplectic half E, B then half E method. The determinant of the position-position block of the Jacobian is used to estimate geometric spreading in order to calculate the amplitude and to detect caustics, adjusting the phase and Maslov index accordingly.
-When a ray passes through a detector plane, a projected 2D spatial matrix, phase, amplitude and momentum are interpolated to the point of contact with the plane and recorded. Later, these values can be used to generate either a point or a gaussian like envelope used to bin detection data to pixels. if the beam is coherent, complex amplitude phase can be summed to generate interference patterns. 
+When a ray passes through a detector plane, a projected 2D spatial matrix, phase, amplitude and momentum are interpolated to the point of contact with the plane and recorded. Later, these values can be used to generate either a point or a gaussian like envelope used to bin detection data to pixels. if the beam is coherent, complex amplitude phase can be summed to generate interference patterns.
 
-Note: particle ray tracing is in early development and has not been t
+Note: particle ray tracing is in early development and has not been
 thoroughly tested.
