@@ -29,7 +29,7 @@ Boundary mesh mu_r = 2000
 
 Spherical boundary element mesh with a radius of 50m
 
-### Compared to the analytical solution for the flux density inside a sphere in a uniform B field (B = B0 * (3 * mu_r / mu_r + 2) with B0 = 1.3 gauss.
+### Compared to the analytical solution for the flux density inside a sphere in a uniform B field (B = B0 * ((3 * mu_r) / (mu_r + 2)) with B0 = 1.3 gauss.
 * Simulated:	3.95 gauss
 * Analytical:	3.896 gauss
 
